@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
-import logo from "@/assets/hobby-bichos-logo.png.asset.json";
+import logo from "@/assets/hobby-bichos-logo-amarela.png.asset.json";
 import { BRAND, navLinks, whatsappLink } from "@/data/units";
 import { BrandButton } from "./BrandButton";
 import { cn } from "@/lib/utils";
@@ -30,9 +30,9 @@ export function Header() {
           <img
             src={logo.url}
             alt="Logo Hobby Bichos Pet Shop"
-            width={56}
-            height={56}
-            className="h-12 w-12 rounded-2xl object-contain sm:h-14 sm:w-14"
+            width={96}
+            height={96}
+            className="h-16 w-16 rounded-2xl object-contain sm:h-20 sm:w-20 lg:h-24 lg:w-24"
           />
           <span className="hidden font-display text-lg leading-none text-brand-blue-deep sm:block">
             Hobby Bichos
