@@ -1,4 +1,7 @@
 import { Sparkles } from "lucide-react";
+import destaqueVacinacao from "@/assets/destaque-vacinacao.jpg";
+import destaqueBanho from "@/assets/destaque-banho.jpg";
+import destaqueNovidades from "@/assets/destaque-novidades.jpg";
 import { SectionTitle } from "./SectionTitle";
 
 type Highlight = {
@@ -7,6 +10,7 @@ type Highlight = {
   title: string;
   text: string;
   tone: "yellow" | "blue" | "red";
+  image: string;
 };
 
 /** Estrutura pronta para promoções, novidades e campanhas. */
@@ -17,6 +21,7 @@ const highlights: Highlight[] = [
     title: "Dia D da Vacinação Antirrábica",
     text: "Ação de vacinação realizada na unidade Epitácio Pessoa, em parceria com a cidade.",
     tone: "blue",
+    image: destaqueVacinacao,
   },
   {
     id: "banho",
@@ -24,6 +29,7 @@ const highlights: Highlight[] = [
     title: "Banho & Tosa na Epitácio Pessoa",
     text: "Atendimento de segunda a sábado, por ordem de chegada e com limite de vagas diárias.",
     tone: "yellow",
+    image: destaqueBanho,
   },
   {
     id: "proximo",
@@ -31,6 +37,7 @@ const highlights: Highlight[] = [
     title: "Espaço para nova campanha",
     text: "Área reservada para promoções, lançamentos e datas comemorativas das lojas.",
     tone: "red",
+    image: destaqueNovidades,
   },
 ];
 
@@ -54,15 +61,24 @@ export function Highlights() {
           {highlights.map((item) => (
             <article
               key={item.id}
-              className={`group flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-4xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-brand ${toneClasses[item.tone]}`}
+              className={`group relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-4xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-brand ${toneClasses[item.tone]}`}
             >
-              <div className="flex items-center justify-between">
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                width={1024}
+                height={1280}
+                className="absolute inset-0 h-full w-full object-cover opacity-45 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-current/85 via-current/25 to-transparent opacity-70" aria-hidden />
+              <div className="relative flex items-center justify-between">
                 <span className="rounded-full bg-background/25 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">
                   {item.badge}
                 </span>
                 <Sparkles className="h-5 w-5 opacity-70 transition-transform duration-300 group-hover:rotate-12" aria-hidden />
               </div>
-              <div>
+              <div className="relative">
                 <h3 className="font-display text-2xl leading-tight">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed opacity-90">{item.text}</p>
               </div>
