@@ -1,3 +1,8 @@
+import unidade1 from "@/assets/unidade-1.jpg";
+import unidade2 from "@/assets/unidade-2.jpg";
+import unidade3 from "@/assets/unidade-3.jpg";
+import loja from "@/assets/loja.jpg";
+
 export type Unit = {
   id: string;
   name: string;
@@ -43,6 +48,7 @@ export const mapsEmbedLink = (query: string) =>
 export const units: Unit[] = [
   {
     id: "epitacio",
+    photo: unidade1,
     name: "Hobby Bichos Epitácio",
     neighborhood: "Miramar",
     street: "Av. Presidente Epitácio Pessoa, 4129",
@@ -58,6 +64,7 @@ export const units: Unit[] = [
   },
   {
     id: "manaira",
+    photo: unidade2,
     name: "Hobby Bichos Manaíra",
     neighborhood: "Manaíra",
     street: "Av. Monteiro da Franca, 1149",
@@ -68,6 +75,7 @@ export const units: Unit[] = [
   },
   {
     id: "altiplano",
+    photo: unidade3,
     name: "Hobby Bichos Altiplano",
     neighborhood: "Altiplano Cabo Branco",
     street: "Rua Poeta Targino Teixeira, 251",
@@ -79,6 +87,7 @@ export const units: Unit[] = [
   },
   {
     id: "geisel",
+    photo: loja,
     name: "Hobby Bichos Geisel",
     neighborhood: "Ernesto Geisel",
     street: "Rua Abelardo Targino da Fonseca, 670",
@@ -90,6 +99,7 @@ export const units: Unit[] = [
   },
   {
     id: "bessa",
+    photo: unidade1,
     name: "Hobby Bichos Bessa",
     neighborhood: "Jardim Oceania",
     street: "Av. Fernando Luiz Henriques dos Santos, 70",
@@ -101,6 +111,7 @@ export const units: Unit[] = [
   },
   {
     id: "tambau",
+    photo: unidade2,
     name: "Hobby Bichos Tambaú",
     neighborhood: "Tambaú",
     street: "Rua Nossa Senhora dos Navegantes, 952",
