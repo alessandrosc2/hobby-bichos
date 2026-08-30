@@ -10,7 +10,6 @@ export function Hero() {
       className="relative overflow-hidden bg-brand-yellow pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-28 lg:pt-36"
     >
       <div className="paw-pattern pointer-events-none absolute inset-0 opacity-60" aria-hidden />
-      <div className="pointer-events-none absolute -left-24 top-24 h-64 w-64 rounded-full bg-brand-yellow-soft/70 blur-2xl" aria-hidden />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8">
         <div>
