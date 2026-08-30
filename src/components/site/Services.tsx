@@ -1,10 +1,25 @@
-import { Bath, Cat, Dog, ShoppingBag, Syringe } from "lucide-react";
+import { Bath, Cat, Clock, Dog, Pill, ShoppingBag, Syringe, Truck } from "lucide-react";
 import banhoTosa from "@/assets/banho-tosa.jpg";
 import { BrandButton } from "./BrandButton";
 import { SectionTitle } from "./SectionTitle";
-import { whatsappLink } from "@/data/units";
+import { CLINIC, whatsappLink } from "@/data/units";
 
 const services = [
+  {
+    icon: Pill,
+    title: "Farmácia completa",
+    text: "Todas as unidades da rede contam com farmácia veterinária completa.",
+  },
+  {
+    icon: Clock,
+    title: "Clínica 24 horas",
+    text: `${CLINIC.label} — ${CLINIC.description}, em ${CLINIC.neighborhood}.`,
+  },
+  {
+    icon: Truck,
+    title: "Entrega (delivery)",
+    text: "Medicamentos, rações, petiscos e acessórios entregues no conforto da sua casa.",
+  },
   {
     icon: ShoppingBag,
     title: "Pet Shop",

@@ -1,6 +1,6 @@
-import { Instagram, MapPin, MessageCircle } from "lucide-react";
-import logo from "@/assets/hobby-bichos-logo.png.asset.json";
-import { BRAND, units, whatsappLink } from "@/data/units";
+import { Clock, Instagram, MapPin, MessageCircle, Pill, Truck } from "lucide-react";
+import logo from "@/assets/hobby-bichos-logo-amarela.png.asset.json";
+import { BRAND, CLINIC, units, whatsappLink } from "@/data/units";
 
 const links = [
   { label: "Início", href: "#inicio" },
@@ -20,10 +20,10 @@ export function Footer() {
             <img
               src={logo.url}
               alt="Logo Hobby Bichos Pet Shop"
-              width={56}
-              height={56}
+              width={80}
+              height={80}
               loading="lazy"
-              className="h-14 w-14 rounded-2xl bg-brand-yellow object-contain p-1"
+              className="h-20 w-20 rounded-2xl object-contain"
             />
             <p className="font-display text-xl leading-tight">
               Hobby Bichos
@@ -36,10 +36,40 @@ export function Footer() {
             Rede de pet shops com {units.length} unidades em {BRAND.city}/{BRAND.state}. Produtos,
             alimentação, acessórios e banho &amp; tosa para cães e gatos.
           </p>
-          <p className="mt-4 flex items-center gap-2 text-sm text-primary-foreground/75">
-            <MapPin className="h-4 w-4 text-brand-yellow" aria-hidden />
-            {BRAND.city} — {BRAND.state}
-          </p>
+          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
+            <li className="flex items-center gap-2">
+              <Pill className="h-4 w-4 shrink-0 text-brand-yellow" aria-hidden />
+              Farmácia completa em todas as unidades
+            </li>
+            <li className="flex items-center gap-2">
+              <Truck className="h-4 w-4 shrink-0 text-brand-yellow" aria-hidden />
+              Entrega (delivery) de medicamentos, rações e acessórios
+            </li>
+            <li className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-brand-yellow" aria-hidden />
+              {BRAND.city} — {BRAND.state}
+            </li>
+          </ul>
+
+          <div className="mt-6 max-w-md rounded-3xl bg-primary-foreground/10 p-5">
+            <p className="flex items-center gap-2 font-display text-lg text-brand-yellow">
+              <Clock className="h-5 w-5" aria-hidden />
+              {CLINIC.label}
+            </p>
+            <p className="mt-2 text-sm text-primary-foreground/80">
+              {CLINIC.description} — {CLINIC.street}, {CLINIC.neighborhood}, {CLINIC.city}/
+              {CLINIC.state}. Telefone {CLINIC.phone}.
+            </p>
+            <a
+              href={CLINIC.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-yellow hover:underline"
+            >
+              <Instagram className="h-4 w-4" aria-hidden />
+              {CLINIC.instagramHandle}
+            </a>
+          </div>
         </div>
 
         <nav aria-label="Navegação do rodapé">
