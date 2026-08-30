@@ -1,5 +1,6 @@
 import { Bath, Cat, Clock, Dog, Pill, ShoppingBag, Syringe, Truck } from "lucide-react";
 import banhoTosa from "@/assets/banho-tosa.jpg";
+import gato from "@/assets/gato.jpg";
 import { BrandButton } from "./BrandButton";
 import { SectionTitle } from "./SectionTitle";
 import { CLINIC, whatsappLink } from "@/data/units";
@@ -58,16 +59,26 @@ export function Services() {
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
-          <div className="relative overflow-hidden rounded-4xl bg-brand-blue">
-            <img
-              src={banhoTosa}
-              alt="Cachorro sorrindo durante o banho no pet shop"
-              width={900}
-              height={1100}
-              loading="lazy"
-              className="h-full max-h-[30rem] w-full object-cover opacity-95"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-blue-deep/95 to-transparent p-6">
+          <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-4">
+              <img
+                src={banhoTosa}
+                alt="Cachorro sorrindo durante o banho no pet shop"
+                width={900}
+                height={1100}
+                loading="lazy"
+                className="aspect-[3/4] w-full rounded-3xl object-cover object-top"
+              />
+              <img
+                src={gato}
+                alt="Gato tranquilo sendo cuidado na Hobby Bichos"
+                width={900}
+                height={1100}
+                loading="lazy"
+                className="aspect-[3/4] w-full rounded-3xl object-cover object-center"
+              />
+            </div>
+            <div className="rounded-3xl bg-brand-blue p-6">
               <p className="font-display text-2xl text-primary-foreground">Banho &amp; Tosa</p>
               <p className="mt-1 text-sm text-primary-foreground/85">
                 Unidade Epitácio Pessoa: segunda a quinta, 07h às 15h · sexta e sábado, 07h às 14h.
@@ -89,6 +100,7 @@ export function Services() {
               </BrandButton>
             </div>
           </div>
+
 
           <div className="grid gap-4 sm:grid-cols-2">
             {services.map((service) => (
