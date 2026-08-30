@@ -1,6 +1,6 @@
-import { Instagram, MapPin, MessageCircle } from "lucide-react";
-import logo from "@/assets/hobby-bichos-logo.png.asset.json";
-import { BRAND, units, whatsappLink } from "@/data/units";
+import { Clock, Instagram, MapPin, MessageCircle, Pill, Truck } from "lucide-react";
+import logo from "@/assets/hobby-bichos-logo-amarela.png.asset.json";
+import { BRAND, CLINIC, units, whatsappLink } from "@/data/units";
 
 const links = [
   { label: "Início", href: "#inicio" },

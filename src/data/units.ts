@@ -34,6 +34,21 @@ export const BRAND = {
   whatsappDisplay: "(83) 99984-2360",
 };
 
+/** Clínica veterinária 24 horas da rede */
+export const CLINIC = {
+  name: "Minha Cria Hobby Bichos",
+  label: "Minha Cria Hobby Bichos | 24 horas",
+  description: "Clínica Veterinária e Petshop 24 horas",
+  street: "R. Dr. Frutuoso Dantas, 63",
+  neighborhood: "Cabo Branco",
+  city: "João Pessoa",
+  state: "PB",
+  phone: "3247-6144",
+  instagram: "https://instagram.com/minhacria_hobbybichos",
+  instagramHandle: "@minhacria_hobbybichos",
+  mapQuery: "Minha Cria Hobby Bichos, R. Dr. Frutuoso Dantas, 63, Cabo Branco, João Pessoa - PB",
+};
+
 export const whatsappLink = (
   number: string = BRAND.whatsapp,
   message = "Olá! Vim pelo site da Hobby Bichos e gostaria de mais informações.",
