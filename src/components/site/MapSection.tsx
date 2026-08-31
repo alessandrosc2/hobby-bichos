@@ -17,22 +17,22 @@ type Props = {
 
 export function MapSection({ selected, onSelect }: Props) {
   return (
-    <div className="mt-16 overflow-hidden rounded-4xl border-2 border-border bg-card shadow-soft">
-      <div className="grid lg:grid-cols-[minmax(0,320px)_1fr]">
-        <div className="border-b border-border bg-muted/50 p-5 lg:border-b-0 lg:border-r">
+    <div className="mt-16 min-w-0 overflow-hidden rounded-4xl border-2 border-border bg-card shadow-soft">
+      <div className="grid min-w-0 lg:grid-cols-[minmax(0,320px)_1fr]">
+        <div className="min-w-0 border-b border-border bg-muted/50 p-5 lg:border-b-0 lg:border-r">
           <p className="font-display text-lg text-brand-blue-deep">Unidades no mapa</p>
           <p className="mt-1 text-sm text-muted-foreground">
             Toque em uma unidade para vê-la no mapa de {BRAND.city}.
           </p>
-          <ul className="mt-4 flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible">
+          <ul className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:flex lg:flex-col">
             {units.map((unit) => (
-              <li key={unit.id} className="shrink-0 lg:shrink">
+              <li key={unit.id} className="min-w-0">
                 <button
                   type="button"
                   onClick={() => onSelect(unit)}
                   aria-pressed={selected.id === unit.id}
                   className={cn(
-                    "w-full rounded-2xl px-4 py-3 text-left text-sm font-bold transition-colors",
+                    "h-full min-w-0 w-full break-words rounded-2xl px-3 py-3 text-left text-sm font-bold leading-tight transition-colors sm:px-4",
                     selected.id === unit.id
                       ? "bg-brand-blue text-primary-foreground"
                       : "bg-background text-brand-blue-deep hover:bg-accent",
@@ -45,7 +45,7 @@ export function MapSection({ selected, onSelect }: Props) {
           </ul>
         </div>
 
-        <div className="relative">
+        <div className="relative min-w-0">
           <iframe
             key={selected.id}
             title={`Mapa da ${selected.name}`}
@@ -58,7 +58,7 @@ export function MapSection({ selected, onSelect }: Props) {
             <p className="font-display text-lg leading-tight text-brand-blue-deep">
               {selected.name}
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 break-words text-sm text-muted-foreground">
               {selected.street} — {selected.neighborhood}, {selected.city}/{selected.state}
             </p>
             <div className="mt-4 flex flex-col gap-2 sm:flex-row">
@@ -68,6 +68,7 @@ export function MapSection({ selected, onSelect }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="sm"
+                className="w-full sm:w-auto"
               >
                 <Navigation className="h-4 w-4" aria-hidden />
                 Como chegar
@@ -82,6 +83,7 @@ export function MapSection({ selected, onSelect }: Props) {
                 rel="noopener noreferrer"
                 variant="whatsapp"
                 size="sm"
+                className="w-full sm:w-auto"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden />
                 Falar no WhatsApp
