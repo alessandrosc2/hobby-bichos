@@ -28,8 +28,11 @@ export function UnitCard({ unit, active, onSelect }: Props) {
           className="h-40 w-full object-cover"
         />
       ) : (
-        <div className="flex h-28 items-center justify-center bg-brand-yellow">
+        <div className="flex h-40 flex-col items-center justify-center gap-2 bg-brand-yellow-soft text-center">
           <MapPin className="h-9 w-9 text-brand-blue-deep" aria-hidden />
+          <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand-blue-deep">
+            Foto em breve
+          </span>
         </div>
       )}
 
@@ -38,7 +41,10 @@ export function UnitCard({ unit, active, onSelect }: Props) {
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-red">
             {unit.neighborhood}
           </p>
-          <h3 className="mt-1 font-display text-xl leading-tight text-brand-blue-deep" itemProp="name">
+          <h3
+            className="mt-1 font-display text-xl leading-tight text-brand-blue-deep"
+            itemProp="name"
+          >
             {unit.name}
           </h3>
         </div>

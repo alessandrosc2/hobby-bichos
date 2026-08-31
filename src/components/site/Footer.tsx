@@ -1,5 +1,5 @@
 import { Clock, Instagram, MapPin, MessageCircle, Pill, Truck } from "lucide-react";
-import logo from "@/assets/hobby-bichos-logo-amarela.png.asset.json";
+import logo from "@/assets/hobby-bichos-logo-amarela.png";
 import { BRAND, CLINIC, units, whatsappLink } from "@/data/units";
 
 const links = [
@@ -18,7 +18,7 @@ export function Footer() {
         <div className="lg:col-span-2">
           <div className="flex items-center gap-3">
             <img
-              src={logo.url}
+              src={logo}
               alt="Logo Hobby Bichos Pet Shop"
               width={80}
               height={80}
@@ -27,9 +27,7 @@ export function Footer() {
             />
             <p className="font-display text-xl leading-tight">
               Hobby Bichos
-              <span className="block text-sm font-semibold text-brand-yellow">
-                {BRAND.tagline}
-              </span>
+              <span className="block text-sm font-semibold text-brand-yellow">{BRAND.tagline}</span>
             </p>
           </div>
           <p className="mt-5 max-w-md text-sm text-primary-foreground/75">

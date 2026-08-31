@@ -70,6 +70,8 @@ export function Hero() {
             alt="Cachorros felizes vestindo camisetas amarelas da Hobby Bichos"
             width={1200}
             height={1200}
+            loading="eager"
+            fetchPriority="high"
             className="relative aspect-square w-full rounded-4xl object-cover shadow-brand"
           />
           <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-3xl bg-background px-4 py-3 shadow-brand sm:left-8">

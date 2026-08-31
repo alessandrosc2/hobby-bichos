@@ -71,12 +71,18 @@ export function Highlights() {
                 height={1280}
                 className="absolute inset-0 h-full w-full object-cover opacity-45 transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-current/85 via-current/25 to-transparent opacity-70" aria-hidden />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-current/85 via-current/25 to-transparent opacity-70"
+                aria-hidden
+              />
               <div className="relative flex items-center justify-between">
                 <span className="rounded-full bg-background/25 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">
                   {item.badge}
                 </span>
-                <Sparkles className="h-5 w-5 opacity-70 transition-transform duration-300 group-hover:rotate-12" aria-hidden />
+                <Sparkles
+                  className="h-5 w-5 opacity-70 transition-transform duration-300 group-hover:rotate-12"
+                  aria-hidden
+                />
               </div>
               <div className="relative">
                 <h3 className="font-display text-2xl leading-tight">{item.title}</h3>
