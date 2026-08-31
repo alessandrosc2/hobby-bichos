@@ -55,7 +55,7 @@ export function Services() {
         <SectionTitle
           eyebrow="Serviços"
           title="Tudo o que o seu pet precisa"
-          description="Serviços confirmados na comunicação oficial da Hobby Bichos. Novos serviços podem ser adicionados a qualquer momento."
+          description="Encontre produtos, cuidados e serviços para facilitar a rotina com o seu pet."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
@@ -116,9 +116,6 @@ export function Services() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.text}</p>
               </article>
             ))}
-            <article className="flex flex-col justify-center rounded-3xl border-2 border-dashed border-brand-blue/25 bg-muted/40 p-6 text-sm text-muted-foreground">
-              Espaço reservado para novos serviços confirmados pela marca.
-            </article>
           </div>
         </div>
       </div>

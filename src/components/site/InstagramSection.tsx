@@ -50,6 +50,7 @@ export function InstagramSection() {
             <a
               key={post.id}
               href={BRAND.instagram}
+              aria-label={`Ver ${post.label} no Instagram`}
               target="_blank"
               rel="noopener noreferrer"
               className={`group relative flex aspect-square flex-col justify-end overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-brand ${post.tone}`}
@@ -79,10 +80,6 @@ export function InstagramSection() {
             </a>
           ))}
         </div>
-
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-          Estrutura preparada para exibir os posts reais do perfil quando as imagens forem enviadas.
-        </p>
 
         <div className="mt-8 flex justify-center">
           <BrandButton

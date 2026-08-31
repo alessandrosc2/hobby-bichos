@@ -26,12 +26,6 @@ export function UnitsSection() {
               onSelect={setSelected}
             />
           ))}
-          <article className="flex min-h-52 flex-col items-center justify-center gap-2 rounded-3xl border-2 border-dashed border-brand-blue/25 bg-card/60 p-6 text-center">
-            <p className="font-display text-lg text-brand-blue-deep">Nova unidade em breve</p>
-            <p className="text-sm text-muted-foreground">
-              Espaço reservado para a próxima loja da rede, aguardando confirmação.
-            </p>
-          </article>
         </div>
 
         <MapSection selected={selected} onSelect={setSelected} />

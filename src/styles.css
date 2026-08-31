@@ -104,6 +104,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
   * {
     border-color: var(--color-border);
   }
@@ -126,8 +131,29 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* O badge é um elemento de edição da plataforma, não parte da experiência pública. */
+#lovable-badge-cta,
+#lovable-badge-close {
+  display: none !important;
+}
+
 @utility paw-pattern {
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 20%,
       color-mix(in oklab, var(--brand-blue) 8%, transparent) 0 12px,
       transparent 13px

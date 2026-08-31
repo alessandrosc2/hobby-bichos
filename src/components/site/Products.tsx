@@ -21,7 +21,7 @@ export function Products() {
             tone="light"
             eyebrow="Produtos"
             title="Variedade para cada fase e cada bicho"
-            description="Categorias disponíveis nas lojas Hobby Bichos. A lista pode ser ampliada conforme o mix de cada unidade."
+            description="Encontre alimentação, acessórios e cuidados para cães e gatos nas lojas Hobby Bichos."
           />
           <img
             src={gato}

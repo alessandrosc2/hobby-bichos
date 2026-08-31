@@ -74,14 +74,19 @@ export function UnitCard({ unit, active, onSelect }: Props) {
           </ul>
         ) : (
           <p className="rounded-xl border border-dashed border-border px-3 py-2 text-xs text-muted-foreground">
-            Horário de funcionamento a confirmar.
+            Consulte horários e disponibilidade pelo WhatsApp.
           </p>
         )}
 
         <p className="flex items-center gap-2 text-sm font-semibold text-brand-blue-deep">
-          <Phone className="h-4 w-4 text-brand-blue" aria-hidden />
-          <span itemProp="telephone">
-            {unit.whatsapp ? BRAND.whatsappDisplay : "Telefone a confirmar"}
+          {unit.whatsapp || unit.phone ? (
+            <Phone className="h-4 w-4 text-brand-blue" aria-hidden />
+          ) : (
+            <MessageCircle className="h-4 w-4 text-brand-blue" aria-hidden />
+          )}
+          <span itemProp={unit.whatsapp || unit.phone ? "telephone" : undefined}>
+            {unit.phone ??
+              (unit.whatsapp ? BRAND.whatsappDisplay : "Fale com a equipe pelo WhatsApp")}
           </span>
         </p>
 

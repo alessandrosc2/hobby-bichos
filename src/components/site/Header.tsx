@@ -16,6 +16,17 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -23,6 +34,12 @@ export function Header() {
         scrolled ? "bg-background/90 shadow-soft backdrop-blur-md" : "bg-transparent",
       )}
     >
+      <a
+        href="#conteudo"
+        className="sr-only fixed left-4 top-4 z-[60] rounded-full bg-brand-blue px-4 py-2 text-sm font-bold text-primary-foreground shadow-brand focus:not-sr-only focus:outline-none focus:ring-2 focus:ring-brand-yellow"
+      >
+        Pular para o conteúdo
+      </a>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <a href="#inicio" className="flex shrink-0 items-center gap-3" aria-label={BRAND.name}>
           <img
@@ -30,7 +47,7 @@ export function Header() {
             alt="Logo Hobby Bichos Pet Shop"
             width={96}
             height={96}
-            className="h-16 w-16 rounded-2xl object-contain sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+            className="h-14 w-14 rounded-2xl object-contain sm:h-16 sm:w-16 lg:h-20 lg:w-20"
           />
           <span className="hidden font-display text-lg leading-none text-brand-blue-deep sm:block">
             Hobby Bichos
@@ -69,6 +86,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue text-primary-foreground lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -77,8 +95,11 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background px-4 pb-6 pt-2 shadow-soft lg:hidden">
-          <nav className="flex flex-col">
+        <div
+          id="mobile-navigation"
+          className="border-t border-border bg-background px-4 pb-6 pt-2 shadow-soft lg:hidden"
+        >
+          <nav className="flex flex-col" aria-label="Navegação mobile">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -97,6 +118,7 @@ export function Header() {
             rel="noopener noreferrer"
             variant="whatsapp"
             className="mt-3 w-full"
+            onClick={() => setOpen(false)}
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             Falar pelo WhatsApp

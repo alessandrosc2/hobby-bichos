@@ -10,6 +10,7 @@ import { InstagramSection } from "@/components/site/InstagramSection";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { units } from "@/data/units";
+import heroPets from "@/assets/hero-pets.jpg";
 
 const title = "Hobby Bichos Pet Shop | Pet shop em João Pessoa - PB";
 const description =
@@ -30,7 +31,13 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: heroPets },
+      {
+        property: "og:image:alt",
+        content: "Cachorros felizes vestindo camisetas amarelas da Hobby Bichos",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: heroPets },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -42,6 +49,7 @@ export const Route = createFileRoute("/")({
           name: "Hobby Bichos Pet Shop",
           slogan: "Seu Pet, nossa paixão!",
           url: "/",
+          image: heroPets,
           sameAs: ["https://instagram.com/hobbybichospet"],
           department: units.map((unit) => ({
             "@type": "PetStore",
@@ -65,7 +73,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main id="conteudo">
         <Hero />
         <About />
         <UnitsSection />

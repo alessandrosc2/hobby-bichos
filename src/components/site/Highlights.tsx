@@ -1,7 +1,6 @@
 import { Sparkles } from "lucide-react";
 import destaqueVacinacao from "@/assets/destaque-vacinacao.jpg";
 import destaqueBanho from "@/assets/destaque-banho.jpg";
-import destaqueNovidades from "@/assets/destaque-novidades.jpg";
 import { SectionTitle } from "./SectionTitle";
 
 type Highlight = {
@@ -31,14 +30,6 @@ const highlights: Highlight[] = [
     tone: "yellow",
     image: destaqueBanho,
   },
-  {
-    id: "proximo",
-    badge: "Em breve",
-    title: "Espaço para nova campanha",
-    text: "Área reservada para promoções, lançamentos e datas comemorativas das lojas.",
-    tone: "red",
-    image: destaqueNovidades,
-  },
 ];
 
 const toneClasses: Record<Highlight["tone"], string> = {
@@ -54,10 +45,10 @@ export function Highlights() {
         <SectionTitle
           eyebrow="Destaques & dicas"
           title="Novidades, campanhas e cuidados com o seu pet"
-          description="Espaço para as campanhas e conteúdos da Hobby Bichos, no mesmo estilo dos posts da marca."
+          description="Acompanhe campanhas e cuidados que fazem parte da rotina de quem cuida com carinho."
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
           {highlights.map((item) => (
             <article
               key={item.id}

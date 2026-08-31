@@ -37,11 +37,6 @@ export function About() {
             title="Uma rede pet feita para quem ama animais"
             description="A Hobby Bichos é uma rede de pet shops de João Pessoa que reúne produtos, alimentação, acessórios e serviços de banho & tosa em lojas espalhadas pelos principais bairros da cidade. Nossa proposta é simples: oferecer atendimento próximo, variedade e cuidado de verdade com cada pet."
           />
-          <p className="mt-4 rounded-2xl border border-dashed border-border bg-muted/60 p-4 text-sm text-muted-foreground">
-            Espaço reservado para a história oficial da marca, tempo de atuação no mercado pet e
-            números institucionais — pronto para receber o texto e as fotos oficiais.
-          </p>
-
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {highlights.map((item) => (
               <div
