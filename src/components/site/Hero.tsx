@@ -27,7 +27,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <BrandButton as="a" href="#unidades" size="lg">
+            <BrandButton as="a" href="#unidades" size="lg" className="w-full sm:w-auto">
               <MapPin className="h-5 w-5" aria-hidden />
               Encontrar uma unidade
             </BrandButton>
@@ -38,13 +38,14 @@ export function Hero() {
               rel="noopener noreferrer"
               variant="whatsapp"
               size="lg"
+              className="w-full sm:w-auto"
             >
               <MessageCircle className="h-5 w-5" aria-hidden />
               Falar pelo WhatsApp
             </BrandButton>
           </div>
 
-          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-3">
+          <dl className="mt-10 grid max-w-lg grid-cols-1 gap-3 min-[420px]:grid-cols-3">
             {[
               { value: `${units.length}`, label: "unidades em João Pessoa" },
               { value: "Cães & Gatos", label: "produtos e cuidados" },

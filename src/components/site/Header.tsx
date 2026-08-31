@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { MapPin, Menu, X, MessageCircle } from "lucide-react";
 import logo from "@/assets/hobby-bichos-logo-amarela.png";
 import { BRAND, navLinks, whatsappLink } from "@/data/units";
 import { BrandButton } from "./BrandButton";
@@ -57,7 +57,7 @@ export function Header() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -125,6 +125,25 @@ export function Header() {
           </BrandButton>
         </div>
       )}
+
+      <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-border bg-background/95 p-3 shadow-soft backdrop-blur-md sm:hidden">
+        <BrandButton as="a" href="#unidades" size="sm" className="min-w-0 flex-1">
+          <MapPin className="h-4 w-4" aria-hidden />
+          Unidades
+        </BrandButton>
+        <BrandButton
+          as="a"
+          href={whatsappLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="whatsapp"
+          size="sm"
+          className="min-w-0 flex-1"
+        >
+          <MessageCircle className="h-4 w-4" aria-hidden />
+          WhatsApp
+        </BrandButton>
+      </div>
     </header>
   );
 }

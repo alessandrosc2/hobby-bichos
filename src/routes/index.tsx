@@ -73,7 +73,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main id="conteudo">
+      <main id="conteudo" className="pb-20 sm:pb-0">
         <Hero />
         <About />
         <UnitsSection />
