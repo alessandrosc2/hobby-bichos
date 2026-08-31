@@ -42,7 +42,7 @@ export function About() {
             números institucionais — pronto para receber o texto e as fotos oficiais.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3" data-reveal-group>
             {highlights.map((item) => (
               <div
                 key={item.label}

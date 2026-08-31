@@ -59,7 +59,7 @@ export function Services() {
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.15fr]">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4" data-reveal>
             <div className="grid grid-cols-2 gap-4">
               <img
                 src={banhoTosa}

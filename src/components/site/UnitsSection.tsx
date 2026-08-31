@@ -17,7 +17,7 @@ export function UnitsSection() {
           className="mx-auto"
         />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
           {units.map((unit) => (
             <UnitCard
               key={unit.id}

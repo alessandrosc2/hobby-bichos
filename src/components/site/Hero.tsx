@@ -12,7 +12,7 @@ export function Hero() {
       <div className="paw-pattern pointer-events-none absolute inset-0 opacity-60" aria-hidden />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8">
-        <div>
+        <div data-reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">
             <PawPrint className="h-3.5 w-3.5" aria-hidden />
             {BRAND.tagline}

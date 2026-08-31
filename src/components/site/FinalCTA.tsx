@@ -7,7 +7,7 @@ export function FinalCTA() {
     <section id="contato" className="bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-4xl bg-brand-yellow px-6 py-14 text-center sm:px-12">
         <div className="paw-pattern pointer-events-none absolute inset-0 opacity-70" aria-hidden />
-        <div className="relative">
+        <div className="relative" data-reveal>
           <h2 className="text-balance-title font-display text-3xl leading-tight text-brand-blue-deep sm:text-4xl lg:text-5xl">
             Tem uma Hobby Bichos perto de você.
           </h2>

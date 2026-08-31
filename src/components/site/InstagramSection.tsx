@@ -45,7 +45,7 @@ export function InstagramSection() {
           description={`Novidades, campanhas e muita fofura no ${BRAND.instagramHandle}.`}
         />
 
-        <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4" data-reveal-group>
           {posts.map((post) => (
             <a
               key={post.id}

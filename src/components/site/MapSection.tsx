@@ -17,7 +17,7 @@ type Props = {
 
 export function MapSection({ selected, onSelect }: Props) {
   return (
-    <div className="mt-16 overflow-hidden rounded-4xl border-2 border-border bg-card shadow-soft">
+    <div className="mt-16 overflow-hidden rounded-4xl border-2 border-border bg-card shadow-soft" data-reveal>
       <div className="grid lg:grid-cols-[minmax(0,320px)_1fr]">
         <div className="border-b border-border bg-muted/50 p-5 lg:border-b-0 lg:border-r">
           <p className="font-display text-lg text-brand-blue-deep">Unidades no mapa</p>

@@ -108,6 +108,12 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored navigation so section titles clear the fixed header. */
+    scroll-padding-top: 6rem;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -123,6 +129,35 @@
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.01em;
+  }
+
+  /* Ensure anchored sections aren't hidden under the fixed header. */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand-yellow) 75%, transparent);
+    color: var(--brand-blue-deep);
+  }
+}
+
+/* Subtle, on-brand scrollbar (pointer devices only). */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--brand-cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--brand-blue) 45%, transparent);
+    border: 3px solid var(--brand-cream);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-blue);
   }
 }
 
@@ -156,4 +191,74 @@
 
 @utility animate-float-soft {
   animation: float-soft 6s ease-in-out infinite;
+}
+
+/* Brand gradient text (amarelo -> vermelho), usado para dar destaque a títulos. */
+@utility text-gradient-brand {
+  background: linear-gradient(
+    100deg,
+    var(--brand-red),
+    color-mix(in oklab, var(--brand-red) 55%, var(--brand-blue-deep))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+ * Scroll reveal — only hide content once JS marks <html> with `reveal-ready`,
+ * so the server-rendered HTML stays visible when JS is unavailable or slow.
+ */
+.reveal-ready [data-reveal],
+.reveal-ready [data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-ready [data-reveal-group] > * {
+  transition-duration: 0.6s;
+}
+
+.reveal-ready [data-reveal].is-visible,
+.reveal-ready [data-reveal-group].is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(3) {
+  transition-delay: 0.16s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(4) {
+  transition-delay: 0.22s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(5) {
+  transition-delay: 0.28s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(6) {
+  transition-delay: 0.34s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(7) {
+  transition-delay: 0.4s;
+}
+.reveal-ready [data-reveal-group].is-visible > *:nth-child(8) {
+  transition-delay: 0.46s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal],
+  .reveal-ready [data-reveal-group] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
